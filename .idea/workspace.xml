@@ -9,7 +9,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de2efd47-7bb3-4c71-b2d2-58339dc23ed1" name="Default" comment="" />
+    <list default="true" id="de2efd47-7bb3-4c71-b2d2-58339dc23ed1" name="Default" comment="x, y 좌표값 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/david0926/game2048/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/david0926/game2048/MainActivity.java" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +50,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/david0926/game2048/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="39" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+            <state relative-caret-position="113">
+              <caret line="342" column="37" lean-forward="true" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2773#28314#0" expanded="true" />
-                <element signature="e#28313#28314#0" expanded="true" />
-                <marker date="1548146062075" expanded="true" signature="1364:2696" ph="..." />
+                <element signature="e#2604#23802#0" expanded="true" />
+                <element signature="e#23801#23802#0" expanded="true" />
+                <marker date="1548147973425" expanded="true" signature="1195:2527" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,7 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TextView</find>
       <find>TextView</find>
     </findStrings>
   </component>
@@ -2454,6 +2456,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -2486,6 +2489,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="x, y 좌표값 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="x, y 좌표값 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2523,13 +2530,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/david0926/game2048/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+        <state relative-caret-position="113">
+          <caret line="342" column="37" lean-forward="true" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2773#28314#0" expanded="true" />
-            <element signature="e#28313#28314#0" expanded="true" />
-            <marker date="1548146062075" expanded="true" signature="1364:2696" ph="..." />
+            <element signature="e#2604#23802#0" expanded="true" />
+            <element signature="e#23801#23802#0" expanded="true" />
+            <marker date="1548147973425" expanded="true" signature="1195:2527" ph="..." />
           </folding>
         </state>
       </provider>
