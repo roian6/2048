@@ -1,5 +1,6 @@
 package com.example.david0926.game2048;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -20,11 +21,12 @@ public class MainActivity extends Activity {
     int defaultNum1, defaultNum2;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Random rand = new Random();
+        final Random rand = new Random();
         defaultNum1 = rand.nextInt(16);
         defaultNum2 = rand.nextInt(16);
 
@@ -397,6 +399,31 @@ public class MainActivity extends Activity {
                                 }
                             }
 
+                        }
+                        while(true){
+                            int num1, num2;
+                            num1 = rand.nextInt(4);
+                            num2 = rand.nextInt(4);
+                            if(board[num1][num2] == 0){
+                                board[num1][num2] = 2;
+                                t1.setText(String.valueOf(board[0][0]));
+                                t2.setText(String.valueOf(board[1][0]));
+                                t3.setText(String.valueOf(board[2][0]));
+                                t4.setText(String.valueOf(board[3][0]));
+                                t5.setText(String.valueOf(board[0][1]));
+                                t6.setText(String.valueOf(board[1][1]));
+                                t7.setText(String.valueOf(board[2][1]));
+                                t8.setText(String.valueOf(board[3][1]));
+                                t9.setText(String.valueOf(board[0][2]));
+                                t10.setText(String.valueOf(board[1][2]));
+                                t11.setText(String.valueOf(board[2][2]));
+                                t12.setText(String.valueOf(board[3][2]));
+                                t13.setText(String.valueOf(board[0][3]));
+                                t14.setText(String.valueOf(board[1][3]));
+                                t15.setText(String.valueOf(board[2][3]));
+                                t16.setText(String.valueOf(board[3][3]));
+                                break;
+                            }
                         }
                         break;
                 }
