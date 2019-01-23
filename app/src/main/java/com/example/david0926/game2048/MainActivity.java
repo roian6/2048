@@ -14,7 +14,7 @@ import java.util.Random;
 
 
 public class MainActivity extends Activity {
-    
+
     RelativeLayout table;
     float x1, x2, y1, y2, xMove, yMove;
     int board[][] = new int[4][4];
@@ -43,6 +43,51 @@ public class MainActivity extends Activity {
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
                 getTextView(i*4+j+1).setText(String.valueOf(board[j][i]));
+            }
+        }
+
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                String[] theme = getApplicationContext().getResources().getStringArray(R.array.green);
+                switch (board[j][i]){
+                    case 0:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.WHITE);
+                        break;
+                    case 2:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[0]));
+                        break;
+                    case 4:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[1]));
+                        break;
+                    case 8:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[2]));
+                        break;
+                    case 16:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[3]));
+                        break;
+                    case 32:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[4]));
+                        break;
+                    case 64:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[5]));
+                        break;
+                    case 128:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[6]));
+                        break;
+                    case 256:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[7]));
+                        break;
+                    case 512:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[8]));
+                        break;
+                    case 1024:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[9]));
+                        break;
+                    case 2048:
+                        getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[10]));
+                        break;
+
+                }
             }
         }
 //        t1 = findViewById(R.id.text1);
@@ -96,7 +141,7 @@ public class MainActivity extends Activity {
                         if (Math.abs(xMove) > 50 || Math.abs(yMove) > 50) {
                             if (Math.abs(xMove) > Math.abs(yMove)) {
                                 if (xMove > 0) {
-                                    Toast.makeText(getApplicationContext(), "right swipe", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), "right swipe", Toast.LENGTH_SHORT).show();
 
                                     for(int i=0;i<4;i++){
                                         if(board[2][i]!=0){
@@ -113,7 +158,7 @@ public class MainActivity extends Activity {
                                     for(int i=0;i<4;i++) {
                                         if (board[1][i] != 0) {
                                             if (board[2][i] == 0) {
-                                                board[2][i] = board[2][i];
+                                                board[2][i] = board[1][i];
                                                 board[1][i] = 0;
                                                 if (board[3][i] == 0) {
                                                     board[3][i] = board[2][i];
@@ -179,7 +224,7 @@ public class MainActivity extends Activity {
 
                                 }
                                 else {
-                                    Toast.makeText(getApplicationContext(), "left swipe", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), "left swipe", Toast.LENGTH_SHORT).show();
                                     for(int i=0;i<4;i++){
                                         if(board[1][i]!=0){
                                             if(board[0][i]==0){
@@ -261,7 +306,7 @@ public class MainActivity extends Activity {
                             }
                             else if (Math.abs(xMove) < Math.abs(yMove)) {
                                 if (yMove < 0) {
-                                    Toast.makeText(getApplicationContext(), "up swipe", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), "up swipe", Toast.LENGTH_SHORT).show();
                                     for(int i=0;i<4;i++){
                                         if(board[i][1]!=0){
                                             if(board[i][0]==0){
@@ -342,7 +387,7 @@ public class MainActivity extends Activity {
 //                                    t16.setText(String.valueOf(board[3][3]));
                                 }
                                 else {
-                                    Toast.makeText(getApplicationContext(), "down swipe", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), "down swipe", Toast.LENGTH_SHORT).show();
                                     for(int i=0;i<4;i++){
                                         if(board[i][2]!=0){
                                             if(board[i][3]==0){
@@ -424,41 +469,75 @@ public class MainActivity extends Activity {
 //                                    t16.setText(String.valueOf(board[3][3]));
                                 }
                             }
+                            while(true){
+                                int num1, num2, stack=0;
+                                num1 = rand.nextInt(4);
+                                num2 = rand.nextInt(4);
+                                if(board[num1][num2] == 0){
+                                    board[num1][num2] = 2;
 
-                        }
-                        while(true){
-                            int num1, num2;
-                            num1 = rand.nextInt(4);
-                            num2 = rand.nextInt(4);
-                            if(board[num1][num2] == 0){
-                                board[num1][num2] = 2;
-
+                                    for(int i=0;i<4;i++){
+                                        for(int j=0;j<4;j++){
+                                            getTextView(i*4+j+1).setText(String.valueOf(board[j][i]));
+                                        }
+                                    }
+                                    break;
+                                }
                                 for(int i=0;i<4;i++){
                                     for(int j=0;j<4;j++){
-                                        getTextView(i*4+j+1).setText(String.valueOf(board[j][i]));
+                                        if(board[j][i] != 0) stack++;
                                     }
                                 }
-//                                t1.setText(String.valueOf(board[0][0]));
-//                                t2.setText(String.valueOf(board[1][0]));
-//                                t3.setText(String.valueOf(board[2][0]));
-//                                t4.setText(String.valueOf(board[3][0]));
-//                                t5.setText(String.valueOf(board[0][1]));
-//                                t6.setText(String.valueOf(board[1][1]));
-//                                t7.setText(String.valueOf(board[2][1]));
-//                                t8.setText(String.valueOf(board[3][1]));
-//                                t9.setText(String.valueOf(board[0][2]));
-//                                t10.setText(String.valueOf(board[1][2]));
-//                                t11.setText(String.valueOf(board[2][2]));
-//                                t12.setText(String.valueOf(board[3][2]));
-//                                t13.setText(String.valueOf(board[0][3]));
-//                                t14.setText(String.valueOf(board[1][3]));
-//                                t15.setText(String.valueOf(board[2][3]));
-//                                t16.setText(String.valueOf(board[3][3]));
-                                break;
+                                if(stack==16) break;
+                            }
+                            for(int i=0;i<4;i++){
+                                for(int j=0;j<4;j++){
+                                    String[] theme = getApplicationContext().getResources().getStringArray(R.array.green);
+                                    switch (board[j][i]){
+                                        case 0:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.WHITE);
+                                            break;
+                                        case 2:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[0]));
+                                            break;
+                                        case 4:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[1]));
+                                            break;
+                                        case 8:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[2]));
+                                            break;
+                                        case 16:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[3]));
+                                            break;
+                                        case 32:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[4]));
+                                            break;
+                                        case 64:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[5]));
+                                            break;
+                                        case 128:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[6]));
+                                            break;
+                                        case 256:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[7]));
+                                            break;
+                                        case 512:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[8]));
+                                            break;
+                                        case 1024:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[9]));
+                                            break;
+                                        case 2048:
+                                            getTextView(i*4+j+1).setBackgroundColor(Color.parseColor(theme[10]));
+                                            break;
+
+                                    }
+                                }
                             }
                         }
-//                        if(board[0][0]==2) t1.setBackgroundColor(Color.RED);
-//                        else t1.setBackgroundColor(Color.WHITE);
+
+
+
                         break;
                 }
 
