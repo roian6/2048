@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -20,6 +21,13 @@ public class MainActivity extends Activity {
     int lastboard[][] = new int[4][4];
     int movedboard[][] = new int [4][4];
     int defaultNum1=0, defaultNum2=0;
+
+    //패치노트
+    //진행 상황 자동 저장
+    //뒤로가기, 새로하기 버튼
+    //테마 변경 옵션
+    //디자인
+    //모션 추가
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -503,7 +511,7 @@ public class MainActivity extends Activity {
                                     num1 = rand.nextInt(4);
                                     num2 = rand.nextInt(4);
                                     if (board[num1][num2] == 0) {
-                                        if(rand.nextInt(6)==0) board[num1][num2] = 4;
+                                        if(rand.nextInt(8)==0) board[num1][num2] = 4;
                                         else board[num1][num2] = 2;
 
                                         for (int i = 0; i < 4; i++) {
@@ -564,10 +572,38 @@ public class MainActivity extends Activity {
                                             break;
                                         case 2048:
                                             getTextView(i * 4 + j + 1).setBackgroundColor(Color.parseColor(theme[10]));
+                                            Toast.makeText(MainActivity.this, "WIN!", Toast.LENGTH_SHORT).show();
                                             break;
-
                                     }
                                 }
+                            }
+                            boolean full = true, gameover = true;
+                            for(int i=0;i<4;i++){
+                                for(int j=0;j<4;j++){
+                                    if(board[j][i] == 0) full = false;
+                                }
+                            }
+                            if(full){
+                                for(int i=0;i<4;i++){
+                                    for(int j=0;j<4;j++){
+                                        if(i<3 && j<3){
+                                            if(board[j][i] == board[j+1][i] || board[j][i] == board[j][i+1]){
+                                                gameover = false;
+                                            }
+                                        }
+                                        else if(i<3 && j>=3){
+                                            if(board[j][i] == board[j][i+1]){
+                                                gameover = false;
+                                            }
+                                        }
+                                        else if(i>=3 && j<3){
+                                            if(board[j][i] == board[j+1][i]){
+                                                gameover = false;
+                                            }
+                                        }
+                                    }
+                                }
+                                if(gameover) Toast.makeText(MainActivity.this, "Game Over", Toast.LENGTH_SHORT).show();
                             }
                         }
                         break;
